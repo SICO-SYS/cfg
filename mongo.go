@@ -11,6 +11,7 @@ package cfg
 type MongoInfo struct {
 	Host string `json:"host"`
 	Port string `json:"port"`
+	Addr string `json:"addr"`
 	User string `json:"user"`
 	Pass string `json:"pass"`
 	Name string `json:"name"`
@@ -18,5 +19,6 @@ type MongoInfo struct {
 
 type Mongo struct {
 	Default MongoInfo `json:"default"`
+	User    MongoInfo `json:"user"`
 	Geo     MongoInfo `json:"geo"`
 }

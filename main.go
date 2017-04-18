@@ -26,7 +26,7 @@ type Main struct {
 	Mysql      Mysql      `json:"mysql"`
 	Mongo      Mongo      `json:"mongo"`
 	Rabbit     Rabbit     `json:"rabbit"`
-	OpenAccess OpenAccess `json:OpenAccess`
+	OpenAccess OpenAccess `json:"OpenAccess"`
 	Log        Log        `json:"log"`
 }
 
