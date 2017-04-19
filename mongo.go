@@ -18,7 +18,7 @@ type MongoInfo struct {
 }
 
 type Mongo struct {
-	Default MongoInfo `json:"default"`
-	User    MongoInfo `json:"user"`
-	Geo     MongoInfo `json:"geo"`
+	Default     MongoInfo `json:"default"`
+	UserKeypair MongoInfo `json:"user"`
+	Geo         MongoInfo `json:"geo"`
 }
