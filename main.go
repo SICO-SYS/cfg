@@ -12,7 +12,6 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"log"
-	"os"
 )
 
 var (
