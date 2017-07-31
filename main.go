@@ -26,9 +26,9 @@ type Main struct {
 	Mysql      Mysql      `json:"mysql"`
 	Mongo      Mongo      `json:"mongo"`
 	Rabbit     Rabbit     `json:"rabbit"`
-	Rpc        RpcPort    `json:"rpc"`
+	RPC        RpcPort    `json:"rpc"`
+	Sentry     Sentry     `json:"sentry"`
 	OpenAccess OpenAccess `json:"OpenAccess"`
-	Log        Log        `json:"log"`
 }
 
 func (c *Main) ReadConfig(path string) (*Main, error) {
@@ -53,13 +53,5 @@ func init() {
 	if err != nil {
 		log.Println(err)
 		log.Fatalln("Parse config.json problem, make sure file with correct syntax")
-	}
-	_, err = os.Stat(Config.Log.Logpath)
-	if err != nil {
-		err = os.MkdirAll(Config.Log.Logpath, 0766)
-		if err != nil {
-			log.Println(err)
-			log.Panicln("Failed to create folder")
-		}
 	}
 }
