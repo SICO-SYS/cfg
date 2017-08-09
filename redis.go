@@ -11,9 +11,9 @@ package cfg
 type RedisInfo struct {
 	Host string `json:"host"`
 	Port string `json:"port"`
-	Pass string `json:"pass"`
+	Auth string `json:"auth"`
 }
 
 type Redis struct {
-	Default RedisInfo `json:"default"`
+	OpenAccess RedisInfo `json:"open"`
 }

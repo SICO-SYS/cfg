@@ -15,22 +15,21 @@ import (
 )
 
 var (
-	Config *Main
-	err    error
+	Config *ConfigItem
 )
 
-type Main struct {
-	Version    string     `json:"version"`
+type ConfigItem struct {
+	AAAEnable  bool       `json:"AAAEnable"`
+	OpenAccess OpenAccess `json:"OpenAccess"`
 	Redis      Redis      `json:"redis"`
 	Mysql      Mysql      `json:"mysql"`
 	Mongo      Mongo      `json:"mongo"`
 	Rabbit     Rabbit     `json:"rabbit"`
-	RPC        RpcPort    `json:"rpc"`
+	RPCPort    RPCPort    `json:"rpcport"`
 	Sentry     Sentry     `json:"sentry"`
-	OpenAccess OpenAccess `json:"OpenAccess"`
 }
 
-func (c *Main) ReadConfig(path string) (*Main, error) {
+func (c *ConfigItem) ReadConfig(path string) (*ConfigItem, error) {
 
 	// We'll change to Call configAPI to parse the config
 	// ioutil.ReadFile("https://cfg.siner.io/production")
@@ -48,7 +47,8 @@ func init() {
 			log.Println(emsg)
 		}
 	}()
-	Config, err = (&Main{}).ReadConfig("config.json")
+	var err error
+	Config, err = (&ConfigItem{}).ReadConfig("config.json")
 	if err != nil {
 		log.Println(err)
 		log.Fatalln("Parse config.json problem, make sure file with correct syntax")
