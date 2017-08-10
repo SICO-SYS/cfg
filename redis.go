@@ -15,5 +15,5 @@ type RedisInfo struct {
 }
 
 type Redis struct {
-	OpenAccess RedisInfo `json:"open"`
+	Public RedisInfo `json:"public"`
 }
