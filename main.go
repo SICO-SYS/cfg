@@ -19,6 +19,7 @@ var (
 )
 
 type ConfigItem struct {
+	Version    string
 	AAAEnable  bool       `json:"AAAEnable"`
 	OpenAccess OpenAccess `json:"OpenAccess"`
 	Redis      Redis      `json:"redis"`
@@ -36,6 +37,10 @@ func (c *ConfigItem) ReadConfig(path string) (*ConfigItem, error) {
 	d, err := ioutil.ReadFile(path)
 	if err == nil {
 		err = json.Unmarshal(d, &c)
+	}
+
+	if c.Version == "" {
+		c.Version = "0.2.3"
 	}
 
 	return c, err
