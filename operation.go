@@ -35,7 +35,7 @@ func ReadFilePath(path string) ([]byte, error) {
 }
 
 func ReadConfigServer() []byte {
-	cc, err := rpc.Conn("B", "6666")
+	cc, err := rpc.Conn("boron", "6666")
 	if err != nil {
 		return nil
 	}
