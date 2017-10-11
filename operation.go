@@ -19,7 +19,7 @@ import (
 )
 
 func ReadLocalFile() []byte {
-	data, err := ioutil.ReadFile("config.json")
+	data, err := ioutil.ReadFile("cfg/config.json")
 	if err != nil {
 		return nil
 	}

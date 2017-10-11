@@ -11,8 +11,9 @@ Contributors
 package cfg
 
 type ConfigItems struct {
-	Version   string `json:"version" redis:"version"`
-	AAAstatus string `json:"aaa.status" redis:"aaa.status"`
+	Version     string `json:"version" redis:"version"`
+	WechatToken string `json:"wechat.token" redis:"wechat.token"`
+	AAAstatus   string `json:"aaa.status" redis:"aaa.status"`
 
 	PublicTokenStatus string `json:"public.token.status" redis:"public.token.status"`
 	PublicTokenExpire string `json:"public.token.expire" redis:"public.token.expire"`
