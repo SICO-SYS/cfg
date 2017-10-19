@@ -11,9 +11,8 @@ Contributors
 package cfg
 
 type ConfigItems struct {
-	Version     string `json:"version" redis:"version"`
-	WechatToken string `json:"wechat.token" redis:"wechat.token"`
-	AAAstatus   string `json:"aaa.status" redis:"aaa.status"`
+	Version   string `json:"version" redis:"version"`
+	AAAstatus string `json:"aaa.status" redis:"aaa.status"`
 
 	PublicTokenStatus string `json:"public.token.status" redis:"public.token.status"`
 	PublicTokenExpire string `json:"public.token.expire" redis:"public.token.expire"`
@@ -38,10 +37,14 @@ type ConfigItems struct {
 	MongoAssetUsername string `json:"mongo.asset.username" redis:"mongo.asset.username"`
 	MongoAssetPassword string `json:"mongo.asset.password" redis:"mongo.asset.password"`
 
-	MysqTestinglHost     string `json:"mysql.testing.host" redis:"mysql.testing.host"`
-	MysqTestinglPort     string `json:"mysql.testing.port" redis:"mysql.testing.port"`
-	MysqTestinglUsername string `json:"mysql.testing.username" redis:"mysql.testing.username"`
-	MysqTestinglPassword string `json:"mysql.testing.password" redis:"mysql.testing.password"`
+	MongoHookAddress  string `json:"mongo.hook.address" redis:"mongo.hook.address"`
+	MongoHookUsername string `json:"mongo.hook.username" redis:"mongo.hook.username"`
+	MongoHookPassword string `json:"mongo.hook.password" redis:"mongo.hook.password"`
+
+	MysqlTestingHost     string `json:"mysql.testing.host" redis:"mysql.testing.host"`
+	MysqlTestingPort     string `json:"mysql.testing.port" redis:"mysql.testing.port"`
+	MysqlTestingUsername string `json:"mysql.testing.username" redis:"mysql.testing.username"`
+	MysqlTestingPassword string `json:"mysql.testing.password" redis:"mysql.testing.password"`
 
 	RpcHeHost string `json:"rpc.He.host" redis:"rpc.He.host"`
 	RpcHePort string `json:"rpc.He.port" redis:"rpc.He.port"`
@@ -82,4 +85,6 @@ type ConfigItems struct {
 	SentryFDSN     string `json:"sentry.F.dsn" redis:"sentry.F.dsn"`
 	SentryNeStatus string `json:"sentry.Ne.status" redis:"sentry.Ne.status"`
 	SentryNeDSN    string `json:"sentry.Ne.dsn" redis:"sentry.Ne.dsn"`
+
+	WechatToken string `json:"wechat.token" redis:"wechat.token"`
 }
