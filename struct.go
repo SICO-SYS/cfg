@@ -41,6 +41,10 @@ type ConfigItems struct {
 	MongoHookUsername string `json:"mongo.hook.username" redis:"mongo.hook.username"`
 	MongoHookPassword string `json:"mongo.hook.password" redis:"mongo.hook.password"`
 
+	MongoOrchestrationAddress  string `json:"mongo.orchestration.address" redis:"mongo.orchestration.address"`
+	MongoOrchestrationUsername string `json:"mongo.orchestration.username" redis:"mongo.orchestration.username"`
+	MongoOrchestrationPassword string `json:"mongo.orchestration.password" redis:"mongo.orchestration.password"`
+
 	MysqlTestingHost     string `json:"mysql.testing.host" redis:"mysql.testing.host"`
 	MysqlTestingPort     string `json:"mysql.testing.port" redis:"mysql.testing.port"`
 	MysqlTestingUsername string `json:"mysql.testing.username" redis:"mysql.testing.username"`
